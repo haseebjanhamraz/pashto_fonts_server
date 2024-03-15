@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "AGT A Ali";
+  src: url("../public/fonts/AGT A Ali.otf") format("otf");
+}
+@font-face {
+  font-family: "AGT Zaranj3";
+  src: local("AGT Zaranj3"),
+    url("../public/fonts/AGT Zaranj3.otf") format("otf");
+}
+
+.fontDisplay {
+  font-family: "Courier New", Courier, monospace;
+}

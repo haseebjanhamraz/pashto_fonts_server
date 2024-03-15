@@ -34,7 +34,7 @@ function FileList() {
   }
 
   return (
-    <div className="flex flex-wrap gap-4">
+    <div className="flex justify-center flex-wrap gap-4 mt-4">
       {/* Map over the data array and render a FontBox component for each font */}
       {data.map((font, index) => (
         <FontBox
