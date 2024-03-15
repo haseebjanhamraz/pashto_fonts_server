@@ -1,14 +1,22 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import FontBox from "./components/FontBox";
-import FileList from "./components/FilesList";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./pages/partials/Navbar";
+import About from "./pages//About";
+import Home from "./pages/Home";
+import Footer from "./pages/partials/Footer";
 const App = () => {
   return (
     <>
-      <Navbar />
-      <div className="p-4 border-solid border-2 border-blue-100 rounded-lg m-5 items">
-        <FileList />
-      </div>
+      <Navbar className="sticky top-0" />
+      <Router>
+        <Routes>
+          <Route exact path="/" Component={Home}></Route>
+        </Routes>
+        <Routes>
+          <Route exact path="/about" Component={About}></Route>
+        </Routes>
+      </Router>
+      <Footer />
     </>
   );
 };

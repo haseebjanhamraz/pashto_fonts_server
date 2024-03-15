@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FontBox from "./FontBox";
+import Loader from "./Loader";
 
 function FileList() {
   const [data, setData] = useState(null);
@@ -26,7 +27,7 @@ function FileList() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (error) {

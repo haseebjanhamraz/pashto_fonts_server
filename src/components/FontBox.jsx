@@ -14,7 +14,6 @@ const FontBox = ({ font, headingFont }) => {
           </span>
         </h1>
       </div>
-      <p className="text-gray-400">Price: $0 / Free</p>
       <div className="mt-3 mb-2 h-50 bg-slate-100 shadow-md h-40 rounded-sm overflow-hidden">
         <h1
           className={`rtl lg:text-3xl md:text-2xl sm:text-2xl text-gray-700 p-2 py-4 mb-5`}
@@ -25,13 +24,15 @@ const FontBox = ({ font, headingFont }) => {
       </div>
 
       <div className="flex gap-2 content-end mt-3 justify-center">
-        <div className="flex rounded-full w-max justify-center cursor-pointer py-1 px-2 text-center bg-green-800">
-          <IoMdDownload className="text-white text-base" />
-          <p className="hidden lg:block md:block text-white text-sm uppercase ">
-            {" "}
-            Download
-          </p>
-        </div>
+        <a href={`/fonts/${font}`}>
+          <div className="flex rounded-full w-max justify-center cursor-pointer py-1 px-2 text-center bg-green-800">
+            <IoMdDownload className="text-white text-base" />
+            <p className="hidden lg:block md:block text-white text-sm uppercase ">
+              {" "}
+              Download
+            </p>
+          </div>
+        </a>
         <div className="flex rounded-full w-max justify-center cursor-pointer py-1 px-2 text-center bg-blue-500">
           <FaDollarSign className="text-yellow-400 text-base" />
           <p className="hidden lg:block md:block text-white text-sm uppercase">
