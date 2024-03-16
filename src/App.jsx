@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./pages/partials/Navbar";
-import About from "./pages//About";
+import About from "./pages/About";
 import Home from "./pages/Home";
 import Footer from "./pages/partials/Footer";
 const App = () => {
@@ -11,8 +11,6 @@ const App = () => {
       <Router>
         <Routes>
           <Route exact path="/" Component={Home}></Route>
-        </Routes>
-        <Routes>
           <Route exact path="/about" Component={About}></Route>
         </Routes>
       </Router>
