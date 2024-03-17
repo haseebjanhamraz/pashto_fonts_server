@@ -5,6 +5,8 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 const navigation = [
   { name: "Home", href: "/", current: true },
   { name: "About", href: "about", current: false },
+  { name: "Pashto Phonetic Keyboard", href: "#", current: false },
+  { name: "How to install", href: "#", current: false },
   { name: "Donate", href: "#", current: false },
 ];
 

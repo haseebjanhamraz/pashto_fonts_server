@@ -19,7 +19,8 @@ const FontBox = ({ font, headingFont }) => {
           className={`rtl lg:text-3xl md:text-2xl sm:text-2xl text-gray-700 p-2 py-4 mb-5`}
           style={{ fontFamily: headingFont }}
         >
-          پښتو فونټس پښتو فونټس پښتو فونټس
+          <p>پښتو زما مورنۍ ژبه ده </p>
+          <p>لر او بر، يو افغان </p>
         </h1>
       </div>
 
@@ -33,12 +34,6 @@ const FontBox = ({ font, headingFont }) => {
             </p>
           </div>
         </a>
-        <div className="flex rounded-full w-max justify-center cursor-pointer py-1 px-2 text-center bg-blue-500">
-          <FaDollarSign className="text-yellow-400 text-base" />
-          <p className="hidden lg:block md:block text-white text-sm uppercase">
-            Donate
-          </p>
-        </div>
       </div>
     </div>
   );

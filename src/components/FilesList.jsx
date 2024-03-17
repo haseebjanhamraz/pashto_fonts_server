@@ -3,9 +3,10 @@ import FontBox from "./FontBox";
 import Loader from "./Loader";
 
 function FileList() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [visibleItems, setVisibleItems] = useState(12);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +27,10 @@ function FileList() {
     fetchData();
   }, []);
 
+  const handleLoadMore = () => {
+    setVisibleItems((prevVisibleItems) => prevVisibleItems + 12);
+  };
+
   if (loading) {
     return <Loader />;
   }
@@ -35,16 +40,27 @@ function FileList() {
   }
 
   return (
-    <div className="flex justify-center flex-wrap gap-4 mt-4">
-      {/* Map over the data array and render a FontBox component for each font */}
-      {data.map((font, index) => (
-        <FontBox
-          key={index}
-          font={font}
-          headingFont={`${font.replace(/\.[^/.]+$/, "")}`}
-        />
-      ))}
-    </div>
+    <>
+      <div className="flex justify-center flex-wrap gap-4 mt-4">
+        {data.slice(0, visibleItems).map((font, index) => (
+          <FontBox
+            key={index}
+            font={font}
+            headingFont={`${font.replace(/\.[^/.]+$/, "")}`}
+          />
+        ))}
+      </div>
+      {visibleItems < data.length && (
+        <div className=" text-center">
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
+            onClick={handleLoadMore}
+          >
+            Load More
+          </button>
+        </div>
+      )}
+    </>
   );
 }
 
