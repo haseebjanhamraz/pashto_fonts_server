@@ -7,6 +7,7 @@ function FileList() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [visibleItems, setVisibleItems] = useState(12);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,6 +32,10 @@ function FileList() {
     setVisibleItems((prevVisibleItems) => prevVisibleItems + 12);
   };
 
+  const filteredData = data.filter((font) =>
+    font.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   if (loading) {
     return <Loader />;
   }
@@ -41,8 +46,17 @@ function FileList() {
 
   return (
     <>
+      <div className="flex justify-center mt-4">
+        <input
+          type="text"
+          placeholder="Search Fonts"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
       <div className="flex justify-center flex-wrap gap-4 mt-4">
-        {data.slice(0, visibleItems).map((font, index) => (
+        {filteredData.slice(0, visibleItems).map((font, index) => (
           <FontBox
             key={index}
             font={font}
@@ -50,7 +64,7 @@ function FileList() {
           />
         ))}
       </div>
-      {visibleItems < data.length && (
+      {visibleItems < filteredData.length && (
         <div className=" text-center">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
