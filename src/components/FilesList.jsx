@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import FontBox from "./FontBox";
 import Loader from "./Loader";
+import SearchBox from "./SearchBox";
+import Counter from "./Counter";
 
 function FileList() {
   const [data, setData] = useState([]);
@@ -46,14 +48,9 @@ function FileList() {
 
   return (
     <>
-      <div className="flex justify-center mt-4">
-        <input
-          type="text"
-          placeholder="Search Fonts"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+      <div className="flex justify-between mb-4 items-center">
+        <Counter totalCount={data.length} />
+        <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       </div>
       <div className="flex justify-center flex-wrap gap-4 mt-4">
         {filteredData.slice(0, visibleItems).map((font, index) => (
@@ -65,7 +62,7 @@ function FileList() {
         ))}
       </div>
       {visibleItems < filteredData.length && (
-        <div className=" text-center">
+        <div className="text-center">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
             onClick={handleLoadMore}
