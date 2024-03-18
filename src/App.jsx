@@ -4,14 +4,19 @@ import Navbar from "./pages/partials/Navbar";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Footer from "./pages/partials/Footer";
+import PashtoPhonetic from "./pages/PashtoPhonetic";
+import HowToInstall from "./pages/HowToInstall";
+
 const App = () => {
   return (
     <>
-      <Navbar className="sticky top-0" />
       <Router>
+        <Navbar />
         <Routes>
-          <Route exact path="/" Component={Home}></Route>
-          <Route exact path="/about" Component={About}></Route>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/pashto-phonetic" element={<PashtoPhonetic />} />
+          <Route exact path="/how-to-install" element={<HowToInstall />} />
         </Routes>
       </Router>
       <Footer />

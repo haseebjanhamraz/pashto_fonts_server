@@ -50,7 +50,11 @@ function FileList() {
     <>
       <div className="flex justify-between mb-4 items-center">
         <Counter totalCount={data.length} />
-        <SearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        <SearchBox
+          count={data.length}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+        />
       </div>
       <div className="flex justify-center flex-wrap gap-4 mt-4">
         {filteredData.slice(0, visibleItems).map((font, index) => (

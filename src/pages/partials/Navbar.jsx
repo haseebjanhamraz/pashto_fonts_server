@@ -1,12 +1,16 @@
-import { Fragment } from "react";
+import { useLocation } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "About", href: "about", current: false },
-  { name: "Pashto Phonetic Keyboard", href: "#", current: false },
-  { name: "How to install", href: "#", current: false },
+  { name: "Home", href: "/", current: false },
+  { name: "About", href: "/about", current: false },
+  {
+    name: "Pashto Phonetic Keyboard",
+    href: "/pashto-phonetic",
+    current: false,
+  },
+  { name: "How to install", href: "/how-to-install", current: false },
   { name: "Donate", href: "#", current: false },
 ];
 
@@ -15,6 +19,15 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const location = useLocation();
+
+  const updateNavigation = () => {
+    return navigation.map((item) => ({
+      ...item,
+      current: location.pathname === item.href,
+    }));
+  };
+
   return (
     <Disclosure as="nav" className="bg-gray-800 sticky top-0">
       {({ open }) => (
@@ -48,7 +61,7 @@ export default function Navbar() {
                 </a>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    {updateNavigation().map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
