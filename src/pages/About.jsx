@@ -3,7 +3,7 @@ import { IoLogoChrome } from "react-icons/io";
 
 const About = () => {
   return (
-    <div className="w-full p-10 m-3 bg-green-100 rounded-lg">
+    <div className="w-auto p-10 m-3 bg-yellow-100 rounded-lg">
       <h2 className="text-2xl uppercase font-serif font-bold">
         About this project
       </h2>

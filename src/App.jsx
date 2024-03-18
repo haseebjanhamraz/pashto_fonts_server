@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Footer from "./pages/partials/Footer";
 import PashtoPhonetic from "./pages/PashtoPhonetic";
 import HowToInstall from "./pages/HowToInstall";
+import Contact from "./pages/Contact";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/pashto-phonetic" element={<PashtoPhonetic />} />
           <Route exact path="/how-to-install" element={<HowToInstall />} />
+          <Route exact path="/contact" element={<Contact />} />
         </Routes>
       </Router>
       <Footer />

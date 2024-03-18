@@ -19,14 +19,22 @@ const WinKeyboardPreview = () => {
       </div>
       <div className="bg-yellow-100 p-4 w-fit rounded-md mt-4">
         <ul>
-          <li>
-            Developed by:{" "}
-            <span className="text-gray-500 font-bold">Haseeb Alam</span>
-          </li>
-          <li>
-            Customized by:{" "}
-            <span className="text-gray-500 font-bold">Shafeeq Gigyani</span>
-          </li>
+          <a href="https://haseebjanhamraz.com" target="_blank">
+            <li>
+              Developed by:{" "}
+              <span className="text-gray-500 font-bold hover:text-blue-800">
+                Haseeb Alam
+              </span>
+            </li>
+          </a>
+          <a href="https://linktr.ee/gigyani" target="_blank">
+            <li>
+              Customized by:{" "}
+              <span className="text-gray-500 font-bold hover:text-blue-800">
+                Shafeeq Gigyani
+              </span>
+            </li>
+          </a>
           <li>
             Sponsored:{" "}
             <a href="https://kpcybers.com" target="_blank">

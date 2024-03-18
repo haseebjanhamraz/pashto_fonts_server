@@ -8,7 +8,7 @@ function FileList() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [visibleItems, setVisibleItems] = useState(12);
+  const [visibleItems, setVisibleItems] = useState(15);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -31,7 +31,7 @@ function FileList() {
   }, []);
 
   const handleLoadMore = () => {
-    setVisibleItems((prevVisibleItems) => prevVisibleItems + 12);
+    setVisibleItems((prevVisibleItems) => prevVisibleItems + 15);
   };
 
   const filteredData = data.filter((font) =>

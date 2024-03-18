@@ -11,7 +11,7 @@ const navigation = [
     current: false,
   },
   { name: "How to install", href: "/how-to-install", current: false },
-  { name: "Donate", href: "#", current: false },
+  { name: "Contact", href: "/contact", current: false },
 ];
 
 function classNames(...classes) {
