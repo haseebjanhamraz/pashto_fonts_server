@@ -1,13 +1,17 @@
-@font-face {
-  font-family: "AGT A Ali";
-  src: url("../public/fonts/AGT A Ali.otf") format("otf");
-}
-@font-face {
-  font-family: "AGT Zaranj3";
-  src: local("AGT Zaranj3"),
-    url("../public/fonts/AGT Zaranj3.otf") format("otf");
-}
+/* modalStyles.css */
 
-.fontDisplay {
-  font-family: "Courier New", Courier, monospace;
+.modal-content {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Adjust as needed */
+  max-width: 400px; /* Adjust as needed */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  background: #fff;
 }

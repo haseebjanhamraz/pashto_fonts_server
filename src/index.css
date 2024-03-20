@@ -5,3 +5,26 @@
 .rtl {
   direction: rtl;
 }
+
+/* modalStyles.css */
+
+/* Styles for the modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+/* Styles for the keyboard container */
+.keyboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}

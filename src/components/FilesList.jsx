@@ -58,7 +58,7 @@ function FileList() {
 
   return (
     <>
-      <div className="flex justify-between mb-4 items-center">
+      <div className="flex flex-wrap justify-between mb-4 items-center">
         <Counter totalCount={data.length} />
         <SampleText onInputChange={handleInputChange} />
         <PashtoKeyboardLayout onInputChange={handleInputChange} />

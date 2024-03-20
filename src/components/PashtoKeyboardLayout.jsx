@@ -2,10 +2,11 @@ import React, { useState, useRef } from "react";
 import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
 import { FaKeyboard } from "react-icons/fa";
+import Modal from "react-modal";
 
 const PashtoKeyboardLayout = ({ onInputChange }) => {
   const [input, setInput] = useState("");
-  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const keyboardRef = useRef();
 
   const onChange = (input) => {
@@ -13,7 +14,11 @@ const PashtoKeyboardLayout = ({ onInputChange }) => {
     onInputChange(input); // Pass input value to parent component
   };
 
-  const onKeyPress = (button) => {};
+  const onKeyPress = (button) => {
+    if (button === "{esc}") {
+      setIsModalOpen(false);
+    }
+  };
 
   const onChangeInput = (event) => {
     const input = event.target.value;
@@ -21,9 +26,9 @@ const PashtoKeyboardLayout = ({ onInputChange }) => {
     keyboardRef.current.setInput(input);
   };
 
-  const toggleKeyboard = () => {
+  const toggleModal = () => {
     setInput("");
-    setIsKeyboardVisible(!isKeyboardVisible);
+    setIsModalOpen(!isModalOpen);
   };
 
   const pashtoLayout = {
@@ -32,13 +37,13 @@ const PashtoKeyboardLayout = ({ onInputChange }) => {
       "ض ص ش س ښ ژ ز ړ ږ ر ذ ډ د",
       "ڼ ن م ل ګ ق ك غ ع ظ ط",
       "ے ۍ ئ ي ی ء ؤ و",
-      "{bksp} {space}",
+      "{bksp} {space} {esc}",
     ],
   };
 
   return (
     <div className="flex gap-2">
-      <button onClick={toggleKeyboard}>
+      <button onClick={toggleModal}>
         <FaKeyboard className="text-2xl" />
       </button>
       <div className="flex items-center">
@@ -49,14 +54,20 @@ const PashtoKeyboardLayout = ({ onInputChange }) => {
           onChange={onChangeInput}
         />
       </div>
-      {isKeyboardVisible && (
-        <Keyboard
-          keyboardRef={(r) => (keyboardRef.current = r)}
-          layout={pashtoLayout}
-          onChange={onChange}
-          onKeyPress={onKeyPress}
-        />
-      )}
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={toggleModal}
+        className="modal" // Apply custom modal styles from index.css
+      >
+        <div className="keyboard-container">
+          <Keyboard
+            keyboardRef={(r) => (keyboardRef.current = r)}
+            layout={pashtoLayout}
+            onChange={onChange}
+            onKeyPress={onKeyPress}
+          />
+        </div>
+      </Modal>
     </div>
   );
 };
