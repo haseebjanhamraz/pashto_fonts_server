@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "../index.css";
-import { FaDollarSign } from "react-icons/fa";
 import { IoMdDownload } from "react-icons/io";
 
-const FontBox = ({ font, headingFont }) => {
+const FontBox = ({ text, font, headingFont }) => {
   return (
     <div className="flex flex-col bg-gray-100 p-4 justify-between shadow-2xl rounded-sm w-60">
       <div className="bg-gray-200 p-2 rounded-lg text-start">
@@ -19,8 +18,7 @@ const FontBox = ({ font, headingFont }) => {
           className={`rtl lg:text-3xl md:text-2xl sm:text-2xl text-gray-700 p-2 py-4 mb-5`}
           style={{ fontFamily: headingFont }}
         >
-          <p>پښتو زما مورنۍ ژبه ده </p>
-          <p>لر او بر، يو افغان </p>
+          <p>{text || "پښتو زما مورنۍ ژبه ده"}</p>
         </h1>
       </div>
 

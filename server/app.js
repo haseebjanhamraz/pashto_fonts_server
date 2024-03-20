@@ -1,11 +1,13 @@
 const express = require("express");
-const fs = require("fs");
 const cors = require("cors");
 const path = require("path");
+const fs = require("fs");
+const contactRoutes = require("./routes/contactRoutes");
 
 const app = express();
 
-app.use(cors()); // Add this line to enable CORS
+app.use(cors()); // Enable CORS
+app.use(express.json()); // Parse JSON requests
 
 // Define the directory path to read
 const directoryPath = path.join(__dirname, "public", "../../public/fonts");
@@ -16,8 +18,7 @@ app.get("/fonts", (req, res) => {
   fs.readdir(directoryPath, (err, files) => {
     if (err) {
       console.error("Error reading directory:", err);
-      res.status(500).json({ error: "Error reading directory" });
-      return;
+      return res.status(500).json({ error: "Error reading directory" });
     }
 
     // Filter out only font files
@@ -31,6 +32,15 @@ app.get("/fonts", (req, res) => {
     // Send the font files array to the frontend
     res.json(fontFiles);
   });
+});
+
+// Contact form route
+app.use("/api/contact", contactRoutes);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Internal Server Error");
 });
 
 // Start the server

@@ -3,6 +3,7 @@ import FontBox from "./FontBox";
 import Loader from "./Loader";
 import SearchBox from "./SearchBox";
 import Counter from "./Counter";
+import SampleText from "./SampleText";
 
 function FileList() {
   const [data, setData] = useState([]);
@@ -10,6 +11,7 @@ function FileList() {
   const [loading, setLoading] = useState(true);
   const [visibleItems, setVisibleItems] = useState(15);
   const [searchQuery, setSearchQuery] = useState("");
+  const [inputData, setInputData] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,6 +36,10 @@ function FileList() {
     setVisibleItems((prevVisibleItems) => prevVisibleItems + 15);
   };
 
+  const handleInputChange = (text) => {
+    setInputData(text);
+  };
+
   const filteredData = data.filter((font) =>
     font.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -50,6 +56,7 @@ function FileList() {
     <>
       <div className="flex justify-between mb-4 items-center">
         <Counter totalCount={data.length} />
+        <SampleText onInputChange={handleInputChange} />
         <SearchBox
           count={data.length}
           searchQuery={searchQuery}
@@ -60,6 +67,7 @@ function FileList() {
         {filteredData.slice(0, visibleItems).map((font, index) => (
           <FontBox
             key={index}
+            text={inputData} // Pass inputData as text prop
             font={font}
             headingFont={`${font.replace(/\.[^/.]+$/, "")}`}
           />

@@ -1,6 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    _subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="min-h-screen py-6 flex flex-col justify-center sm:py-12">
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -13,12 +41,14 @@ const ContactForm = () => {
             </p>
           </div>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <input
               className="shadow mb-4 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               placeholder="Name"
               name="name"
+              value={formData.name}
+              onChange={handleChange}
             />
 
             <input
@@ -26,6 +56,8 @@ const ContactForm = () => {
               type="email"
               placeholder="Email"
               name="email"
+              value={formData.email}
+              onChange={handleChange}
             />
 
             <input
@@ -33,6 +65,8 @@ const ContactForm = () => {
               type="text"
               placeholder="Subject"
               name="_subject"
+              value={formData._subject}
+              onChange={handleChange}
             />
 
             <textarea
@@ -40,6 +74,8 @@ const ContactForm = () => {
               type="text"
               placeholder="Type your message here..."
               name="message"
+              value={formData.message}
+              onChange={handleChange}
               style={{ height: "121px" }}
             ></textarea>
 

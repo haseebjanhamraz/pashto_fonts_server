@@ -1,6 +1,6 @@
 function SearchBox({ searchQuery, setSearchQuery, count }) {
   return (
-    <div className="flex justify-center mt-4">
+    <div className="flex justify-center">
       <input
         type="text"
         placeholder={`Search in ${count} fonts`}
