@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
 import { FaKeyboard } from "react-icons/fa";
+import { IoIosCloseCircle } from "react-icons/io";
 import Modal from "react-modal";
 
 const PashtoKeyboardLayout = ({ onInputChange }) => {
@@ -26,6 +27,10 @@ const PashtoKeyboardLayout = ({ onInputChange }) => {
     keyboardRef.current.setInput(input);
   };
 
+  const onClearInput = () => {
+    setInput("");
+  };
+
   const toggleModal = () => {
     setInput("");
     setIsModalOpen(!isModalOpen);
@@ -44,7 +49,7 @@ const PashtoKeyboardLayout = ({ onInputChange }) => {
   return (
     <div className="flex gap-2">
       <button onClick={toggleModal}>
-        <FaKeyboard className="text-2xl" />
+        <FaKeyboard className="text-2xl text-gray-400 hover:text-gray-950" />
       </button>
       <div className="flex items-center">
         <input
@@ -53,6 +58,11 @@ const PashtoKeyboardLayout = ({ onInputChange }) => {
           placeholder={"Pashto Virtual Keyboard"}
           onChange={onChangeInput}
         />
+        {input !== "" && (
+          <button onClick={onClearInput}>
+            <IoIosCloseCircle />
+          </button>
+        )}
       </div>
       <Modal
         isOpen={isModalOpen}
