@@ -4,6 +4,7 @@ import Loader from "./Loader";
 import SearchBox from "./SearchBox";
 import Counter from "./Counter";
 import SampleText from "./SampleText";
+import PashtoKeyboardLayout from "./PashtoKeyboardLayout";
 
 function FileList() {
   const [data, setData] = useState([]);
@@ -54,6 +55,7 @@ function FileList() {
 
   return (
     <>
+      <PashtoKeyboardLayout />
       <div className="flex justify-between mb-4 items-center">
         <Counter totalCount={data.length} />
         <SampleText onInputChange={handleInputChange} />
