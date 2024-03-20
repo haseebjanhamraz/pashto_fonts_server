@@ -13,6 +13,8 @@ function FileList() {
   const [visibleItems, setVisibleItems] = useState(15);
   const [searchQuery, setSearchQuery] = useState("");
   const [inputData, setInputData] = useState("");
+  const [keyboardInput, setKeyboardInput] = useState("");
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,6 +40,7 @@ function FileList() {
   };
 
   const handleInputChange = (text) => {
+    setInputValue(inputValue);
     setInputData(text);
   };
 
@@ -55,10 +58,10 @@ function FileList() {
 
   return (
     <>
-      <PashtoKeyboardLayout />
       <div className="flex justify-between mb-4 items-center">
         <Counter totalCount={data.length} />
         <SampleText onInputChange={handleInputChange} />
+        <PashtoKeyboardLayout onInputChange={handleInputChange} />
         <SearchBox
           count={data.length}
           searchQuery={searchQuery}
