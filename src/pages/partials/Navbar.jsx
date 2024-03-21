@@ -50,8 +50,8 @@ export default function Navbar() {
                 <a href="/">
                   <div className="flex flex-shrink-0 items-center">
                     <img
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                      className="h-8 w-auto px-4 bg-gray-100 rounded-lg py-1"
+                      src="../src/assets/Logo.png"
                       alt="Pashto Fonts Logo"
                     />
                     <h1 className="text-white font-bold ml-3">

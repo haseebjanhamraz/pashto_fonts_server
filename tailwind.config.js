@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "custom-font": ['"AGT A Ali"', "AA Sameer Sagar Nastaleeq Bold"],
+        AGT: ["AGT ABDUL MAJEED", "sans-serif"],
+        Kapisa: ["AGT Kapisa", "sans-serif"],
       },
     },
   },

@@ -6,7 +6,18 @@
   direction: rtl;
 }
 
-/* modalStyles.css */
+@font-face {
+  font-family: "AGT";
+  src: url("./../public/fonts/AGT Abdul Majeed.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Kapisa";
+  src: url("./../public/fonts/AGT Kapisa.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* Styles for the modal */
 .modal {
@@ -27,4 +38,8 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
+}
+
+.hg-button {
+  font-family: "AGT Kapisa";
 }

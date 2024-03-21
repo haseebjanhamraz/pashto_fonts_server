@@ -38,10 +38,10 @@ const PashtoKeyboardLayout = ({ onInputChange }) => {
 
   const pashtoLayout = {
     default: [
-      "خ ح چ ځ ج ث ټ ت پ ب ا",
+      "خ ح چ ځ څ ج ث ټ ت پ ب ا",
       "ض ص ش س ښ ژ ز ړ ږ ر ذ ډ د",
-      "ڼ ن م ل ګ ق ك غ ع ظ ط",
-      "ے ۍ ئ ي ی ء ؤ و",
+      "ڼ ن م ل ګ گ ك ق ف غ ع ظ ط",
+      "ے ۍ ئ ي ی ء ؤ و ه",
       "{bksp} {space} {esc}",
     ],
   };
@@ -67,9 +67,12 @@ const PashtoKeyboardLayout = ({ onInputChange }) => {
       <Modal
         isOpen={isModalOpen}
         onRequestClose={toggleModal}
-        className="modal" // Apply custom modal styles from index.css
+        className="modal"
       >
-        <div className="keyboard-container">
+        <div className="flex flex-col keyboard-container">
+          <div className="bg-gray-200 w-full p-2 rounded-lg mb-3">
+            <p className="rtl font-Kapisa">{input}</p>
+          </div>
           <Keyboard
             keyboardRef={(r) => (keyboardRef.current = r)}
             layout={pashtoLayout}
