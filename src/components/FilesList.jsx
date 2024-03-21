@@ -10,7 +10,7 @@ function FileList() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [visibleItems, setVisibleItems] = useState(16);
+  const [visibleItems, setVisibleItems] = useState(15);
   const [searchQuery, setSearchQuery] = useState("");
   const [inputData, setInputData] = useState("");
   const [keyboardInput, setKeyboardInput] = useState("");
@@ -36,7 +36,7 @@ function FileList() {
   }, []);
 
   const handleLoadMore = () => {
-    setVisibleItems((prevVisibleItems) => prevVisibleItems + 16);
+    setVisibleItems((prevVisibleItems) => prevVisibleItems + 15);
   };
 
   const handleInputChange = (text) => {

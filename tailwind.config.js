@@ -5,7 +5,7 @@ export default {
     extend: {
       lineHeight: {
         loosed: "4.5",
-        12: "3rem",
+        12: "5rem",
       },
       fontFamily: {
         sans: ['"PT Sans"', "sans-serif"],
