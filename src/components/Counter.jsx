@@ -1,9 +1,9 @@
 function Counter({ totalCount }) {
   return (
-    <div className=" bg-yellow-200 rounded-lg shadow-md text-center w-fit px-4 py-5">
-      <p>
+    <div className="counter rounded-lg shadow-md text-center w-fit px-4 py-5">
+      <p className="font-bold">
         Total Fonts:{" "}
-        <span className="bg-red-400 rounded-md p-2 font-bold text-white">
+        <span className="bg-slate-700 rounded-md p-2 font-bold text-white">
           {totalCount}
         </span>
       </p>

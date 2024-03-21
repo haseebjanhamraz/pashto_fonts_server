@@ -3,11 +3,11 @@ import { IoLogoChrome } from "react-icons/io";
 
 const About = () => {
   return (
-    <div className="w-auto p-10 m-3 bg-yellow-100 rounded-lg">
-      <h2 className="text-2xl uppercase font-serif font-bold">
+    <div className="w-auto p-10 m-3 bg-slate-700 rounded-lg">
+      <h2 className="text-2xl uppercase text-white font-bold">
         About this project
       </h2>
-      <div className="text-gray-600 text-justify pt-4">
+      <div className="text-white text-justify pt-4">
         <p>
           In a digital age where cultural preservation and accessibility go hand
           in hand, the significance of linguistic diversity cannot be
@@ -26,7 +26,7 @@ const About = () => {
           particularly minority and indigenous languages, is gaining traction
           globally.
         </p>
-        <h3 className="mt-8 font-serif text-lg text-black">
+        <h3 className="mt-8 text-xl uppercase text-white">
           Preserving Cultural Identity Through Typography
         </h3>
         <p className="mt-4">
@@ -45,7 +45,7 @@ const About = () => {
           modern or traditional, the repository offers a plethora of options to
           suit different contexts and design requirements.
         </p>
-        <h3 className="mt-8 font-serif text-lg text-black">
+        <h3 className="mt-8 text-xl uppercase text-white">
           Accessibility and Empowerment
         </h3>
         <p className="mt-4">
@@ -61,7 +61,7 @@ const About = () => {
           or developing software applications—all while retaining the integrity
           of their language.
         </p>
-        <h3 className="mt-8 font-serif text-lg text-black">
+        <h3 className="mt-8 text-xl uppercase text-white">
           Fostering Collaboration and Innovation
         </h3>
         <p className="mt-4">

@@ -3,10 +3,10 @@ function SearchBox({ searchQuery, setSearchQuery, count }) {
     <div className="flex justify-center">
       <input
         type="text"
-        placeholder={`Search in ${count} fonts`}
+        placeholder={`Search - ${count} fonts`}
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="counter bg-white px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-slate-500"
       />
     </div>
   );

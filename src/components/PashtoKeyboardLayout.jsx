@@ -55,7 +55,7 @@ const PashtoKeyboardLayout = ({ onInputChange }) => {
         <input
           disabled
           value={input}
-          placeholder={"Pashto Virtual Keyboard"}
+          placeholder="Pashto Virtual Keyboard"
           onChange={onChangeInput}
         />
         {input !== "" && (
@@ -71,7 +71,7 @@ const PashtoKeyboardLayout = ({ onInputChange }) => {
       >
         <div className="flex flex-col keyboard-container">
           <div className="bg-gray-200 w-full p-2 rounded-lg mb-3">
-            <p className="rtl font-Kapisa">{input}</p>
+            <p className="rtl font-Kapisa text-2xl">{input}</p>
           </div>
           <Keyboard
             keyboardRef={(r) => (keyboardRef.current = r)}

@@ -17,11 +17,11 @@ const SampleText = ({ onInputChange, keyboardInput }) => {
   return (
     <>
       <input
-        className="rtl px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="rtl px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-slate-500"
         type="text"
         value={inputData}
         onChange={handleInputChange}
-        placeholder={"دلته د نمونې لپاره ليكل وكړئ"}
+        placeholder={"دلته په پښتو كښې ليكل وكړئ"}
       />
     </>
   );
