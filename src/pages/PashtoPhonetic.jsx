@@ -7,7 +7,7 @@ const PashtoPhonetic = () => {
       <div className="bg-blue-100 p-10 w-full">
         <div className="flex gap-2">
           <div className="w-[800px]">
-            <h1 className="text-3xl uppercase font-serif font-bold">
+            <h1 className="text-6xl uppercase font-bold">
               Pashto Phonetic Keyboard
             </h1>
             <p className="p-4 text-justify text-gray-700 lg:text-base sm:text-sm">
