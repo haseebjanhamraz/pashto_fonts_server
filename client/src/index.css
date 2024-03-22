@@ -8,13 +8,13 @@
 
 @font-face {
   font-family: "AGT";
-  src: url("./../public/fonts/AGT Abdul Majeed.otf") format("otf");
+  src: url("./assets/fonts/AGT Abdul Majeed.otf") format("otf");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Kapisa";
-  src: url("./../public/fonts/AGT Kapisa.otf") format("otf");
+  src: url("./assets/fonts/AGT Kapisa.otf") format("otf");
   font-weight: normal;
   font-style: normal;
 }
