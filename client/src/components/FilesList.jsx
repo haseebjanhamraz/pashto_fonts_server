@@ -19,7 +19,9 @@ function FileList() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/fonts");
+        const response = await fetch(
+          "https://pashto-fonts-server-00ae007314ac.herokuapp.com/fonts"
+        );
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
