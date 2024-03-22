@@ -4,12 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "build": "npm i"
+    "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Haseeb Alam",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

@@ -3,6 +3,7 @@ const cors = require("cors");
 const path = require("path");
 const fs = require("fs");
 const contactRoutes = require("./routes/contactRoutes");
+require("dotenv").config;
 
 const app = express();
 
