@@ -10,7 +10,7 @@ app.use(cors()); // Enable CORS
 app.use(express.json()); // Parse JSON requests
 
 // Define the directory path to read
-const directoryPath = path.join(__dirname, "public", "../../public/fonts");
+const directoryPath = path.join(__dirname, "public", "../public/fonts");
 
 // Endpoint to read the directory and send data to frontend
 app.get("/fonts", (req, res) => {
